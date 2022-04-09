@@ -24,7 +24,7 @@ async def on_member_join(member):
   await channel.send(embed=embed)
 
 @bot.command()
-async def info():
+async def info(ctx):
   embed = discord.Embed(
     title = "Information About Me",
     description = 'I am called Pacemaker, made by **"×¤-|☆ŁÄVÌÈ§†È§☆|-¤/×"#8692**, my prefix is `p!` and here is my commands list.',
@@ -38,5 +38,7 @@ async def info():
     name = "**__Information__**",
     value = "Working on it"
   )
+  
+  await ctx.send(embed=embed)
 
 bot.run(os.environ['DISCORD_TOKEN'])
