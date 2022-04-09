@@ -77,7 +77,7 @@ async def abtusr(ctx, user:discord.Member=None):
     )
   else:
     embed = discord.Embed(
-      title = f"About You: {cts.author.status}",
+      title = f"About You: {ctx.author.status}",
       color = 0xFF6500
     )
     embed.add_field(
