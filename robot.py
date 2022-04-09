@@ -38,6 +38,7 @@ async def info(ctx):
     name = "**__Information__**",
     value = "Working on it"
   )
+  embed.set_footer(text="<> - Required | [] - Optional")
   
   await ctx.send(embed=embed)
 
