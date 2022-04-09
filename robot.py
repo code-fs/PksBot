@@ -43,5 +43,70 @@ async def info(ctx):
   embed.set_footer(text="<> - Required | [] - Optional")
   
   await ctx.send(embed=embed)
+  
+@bot.command()
+async def abtusr(ctx, user:discord.Member=None):
+  if user:
+    embed = discord.Embed(
+      title = f"About {user}: {user.status}",
+      color = 0xFF6500
+    )
+    embed.add_field(
+      name = "**__ID__**",
+      value = user.id
+    )
+    embed.add_field(
+      name = "**__Name__**",
+      value = user.name
+    )
+    embed.add_field(
+      name = "**__Account Created At__**",
+      value = user.created_at
+    )
+    embed.add_field(
+      name = "**__Joined At__**",
+      value = user.joined_at
+    )
+    embed.add_field(
+      name = "Roles",
+      value = user.roles
+    )
+    embed.add_field(
+      name = "**__Is Bot?__**",
+      value = user.bot
+    )
+  else:
+    embed = discord.Embed(
+      title = f"About You: {cts.author.status}",
+      color = 0xFF6500
+    )
+    embed.add_field(
+      name = "**__ID__**",
+      value = ctx.author.id
+    )
+    embed.add_field(
+      name = "**__Name__**",
+      value = ctx.author.name
+    )
+    embed.add_field(
+      name = "**__Account Created At__**",
+      value = ctx.author.created_at
+    )
+    embed.add_field(
+      name = "**__Joined At__**",
+      value = ctx.author.joined_at
+    )
+    embed.add_field(
+      name = "Roles",
+      value = ctx.author.roles
+    )
+    embed.add_field(
+      name = "**__Is Bot?__**",
+      value = ctx.author.bot
+    )
+    
+  embed.set_thumbnail(url = user.display_avatar)
 
+  await ctx.send(embed=embed)
+  
 bot.run(os.environ['DISCORD_TOKEN'])
