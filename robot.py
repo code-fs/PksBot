@@ -68,8 +68,8 @@ async def abtusr(ctx, user:discord.Member=None):
       value = user.joined_at
     )
     embed.add_field(
-      name = "Roles",
-      value = user.roles
+      name = "**__Roles__**",
+      value = user.roles.name
     )
     embed.add_field(
       name = "**__Is Bot?__**",
@@ -97,8 +97,8 @@ async def abtusr(ctx, user:discord.Member=None):
       value = ctx.author.joined_at
     )
     embed.add_field(
-      name = "Roles",
-      value = ctx.author.roles
+      name = "**__Roles__**",
+      value = ctx.author.roles.name
     )
     embed.add_field(
       name = "**__Is Bot?__**",
