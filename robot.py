@@ -20,6 +20,23 @@ async def on_member_join(member):
     color = 0xFF6500
   )
   embed.set_author(name=member, icon_url=member.display_avatar)
+  embed.set_footer(text="Happy to see you!")
   await channel.send(embed=embed)
+
+@bot.command()
+async def info():
+  embed = discord.Embed(
+    title = "Information About Me",
+    description = 'I am called Pacemaker, made by **"×¤-|☆ŁÄVÌÈ§†È§☆|-¤/×"#8692**, my prefix is `p!` and here is my commands list.',
+    color = 0xFF6500
+  )
+  embed.add_field(
+    name = "**__Moderation__**",
+    value = "Working on it"
+  )
+  embed.add_field(
+    name = "**__Information__**",
+    value = "Working on it"
+  )
 
 bot.run(os.environ['DISCORD_TOKEN'])
