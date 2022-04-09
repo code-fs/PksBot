@@ -20,6 +20,6 @@ async def on_member_join(member):
     color = 0xFF6500
   )
   embed.set_author(name=member, icon_url=member.display_avatar)
-  await channel.send('hello')
+  await channel.send(embed=embed)
 
 bot.run(os.environ['DISCORD_TOKEN'])
