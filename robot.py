@@ -22,4 +22,4 @@ async def on_member_join(member):
   embed.set_author(name=mention)
   await channel.send('hello')
 
-  client.run(os.environ['TOKEN'])
+  bot.run(os.environ['TOKEN'])
