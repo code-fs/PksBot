@@ -19,7 +19,7 @@ async def on_member_join(member):
     description = f"How are you doing? Before hoping into the fun, make sure to read the rules in <#962096867783626812> and join the team by opening a ticket in <#962096867783626812> then follow along.",
     color = 0xFF6500
   )
-  embed.set_author(name=mention)
+  embed.set_author(name=member, icon_url=member.display_avatar)
   await channel.send('hello')
 
 bot.run(os.environ['DISCORD_TOKEN'])
