@@ -33,7 +33,7 @@ async def help(ctx):
   )
   embed.add_field(
     name = "**__Moderation__**",
-    value = "Working on it",
+    value = "`accept`, `abort`",
     inline = False
   )
   embed.add_field(
