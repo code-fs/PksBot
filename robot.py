@@ -117,5 +117,15 @@ async def abtusr(ctx, user:discord.Member=None):
     embed.set_thumbnail(url = ctx.author.display_avatar)
 
   await ctx.send(embed=embed)
+
+@bot.command()
+async def tc(ctx):
+  embed = discord.Embed(
+    title = "Tactics",
+    description = 'For a team tactic it is simple, stable defense and full pressurer and a golie. A team should adapt to what they are up against, if the enemy goalkeeper is a dangerous kicker and can serve offensive shots from his place, the pressure player will stop looking for angles and instead be close to the enemy keeper. If the enemy keeper Can not go good shots and resorts to passing immediatly, the pressure player should keep pressuring but also look for empty spaces to recieve the ball from his goalkeeper and score, an empty angle may be far from the enemy goalkeeper by he will not be a threat anyways. Defender stays stable.'
+    color = 0xFF6500
+  )
+  
+  await ctx.send(embed=embed)
   
 bot.run(os.environ['DISCORD_TOKEN'])
