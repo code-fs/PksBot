@@ -75,6 +75,7 @@ async def abtusr(ctx, user:discord.Member=None):
       name = "**__Is Bot?__**",
       value = user.bot
     )
+    embed.set_thumbnail(url = user.display_avatar)
   else:
     embed = discord.Embed(
       title = f"About You: {ctx.author.status}",
@@ -105,7 +106,7 @@ async def abtusr(ctx, user:discord.Member=None):
       value = ctx.author.bot
     )
     
-  embed.set_thumbnail(url = user.display_avatar)
+    embed.set_thumbnail(url = ctx.author.display_avatar)
 
   await ctx.send(embed=embed)
   
