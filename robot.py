@@ -128,9 +128,9 @@ async def tc(ctx):
   
   await ctx.send(embed=embed)
 
-@client.command()
+@bot.command()
 async def stc(ctx, *, suggestion):
-  channel = client.get_channel(955093721093910578)
+  channel = bot.get_channel(955093721093910578)
   embed = discord.Embed(
     title = "Tactic Suggestion Submitted!",
     description = "Your suggestion will be sent staff and they will respond to you ASAP.",
