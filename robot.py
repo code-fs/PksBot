@@ -130,7 +130,7 @@ async def tc(ctx):
   await ctx.send(embed=embed)
 
 @bot.command()
-async def stc(ctx, *, suggestion):
+async def st(ctx, *, suggestion):
   channel = bot.get_channel(955093721093910578)
   embed = discord.Embed(
     title = "Tactic Suggestion Submitted!",
@@ -152,8 +152,38 @@ async def stc(ctx, *, suggestion):
     value = ctx.author.id,
     inline = False
   )
+  submission.set_footer(text = "`accept <user_id>` to accept or `abort <user_id>` to abort")
   
   await channel.send(embed=submission)
   await ctx.reply(embed=embed)
+
+
+@bot.command()
+async def accept(ctx, user_id):
+  embed = discord.Embed(
+    title = "Good News!",
+    description = "Your tactics were approved!",
+    color = 0x47ff69
+  )
+  
+  user_id = int(user_id)
+  target = bot.get_user(user_id)
+  
+  await target.send(embed=embed)
+  await ctx.send("Done.")
+  
+@bot.command()
+async def abort(ctx, user_id):
+  embed = discord.Embed(
+    title = "Bad News.",
+    description = "Your tactics were declined.",
+    color = 0xff4747
+  )
+  
+  user_id = int(user_id)
+  target = bot.get_user(user_id)
+  
+  await target.send(embed=embed)
+  await ctx.send("Done.")
   
 bot.run(os.environ['DISCORD_TOKEN'])
