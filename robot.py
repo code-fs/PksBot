@@ -38,7 +38,12 @@ async def help(ctx):
   )
   embed.add_field(
     name = "**__Information__**",
-    value = "`abtusr`,`st`",
+    value = "`abtusr`",
+    inline = False
+  )
+  embed.add_field(
+    name = "**__Utility__**",
+    value = "`st`",
     inline = False
   )
   embed.set_footer(text="<> - Required | [] - Optional")
