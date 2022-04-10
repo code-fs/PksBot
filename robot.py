@@ -6,6 +6,7 @@ intents = discord.Intents.default()
 intents.members = True
 
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('p!'),intents=intents)
+bot.help_command = None
 
 @bot.event
 async def on_ready():
@@ -24,10 +25,10 @@ async def on_member_join(member):
   await channel.send(embed=embed)
 
 @bot.command()
-async def info(ctx):
+async def help(ctx):
   embed = discord.Embed(
     title = "Information About Me",
-    description = 'I am called Pacemaker, made by **"×¤-|☆ŁÄVÌÈ§†È§☆|-¤/×"#8692**, my prefix is `p!` and here is my commands list.',
+    description = 'I am called Pacemaker, made by **"×¤-|☆ŁÄVÌÈ§†È§☆|-¤/×"#8692**, my prefix is `p!` or you can mention me. Here is my commands list.',
     color = 0xFF6500
   )
   embed.add_field(
@@ -37,7 +38,7 @@ async def info(ctx):
   )
   embed.add_field(
     name = "**__Information__**",
-    value = "`abtusr`,`tc`",
+    value = "`abtusr`,`st`",
     inline = False
   )
   embed.set_footer(text="<> - Required | [] - Optional")
@@ -152,7 +153,7 @@ async def stc(ctx, *, suggestion):
     inline = False
   )
   
-  await channel.send(embed=submition)
+  await channel.send(embed=submission)
   await ctx.reply(embed=embed)
   
 bot.run(os.environ['DISCORD_TOKEN'])
