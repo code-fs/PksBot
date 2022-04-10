@@ -144,7 +144,7 @@ async def st(ctx, *, suggestion):
   )
   submission = discord.Embed(
     title = "New Tactic Suggestion!",
-    url = ctx.author.jump_url,
+    url = ctx.message.jump_url,
     description = f"By **{ctx.author.display_name}**",
     color = 0xFF6500
   )
