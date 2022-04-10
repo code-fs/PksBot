@@ -49,7 +49,7 @@ async def abtusr(ctx, user:discord.Member=None):
   if user:
     roles = []
     for role in user.roles:
-      roles.append(role.name.mention)
+      roles.append(role.mention)
       
     embed = discord.Embed(
       title = f"About {user}: {user.status}",
@@ -83,7 +83,7 @@ async def abtusr(ctx, user:discord.Member=None):
   else:
     roles = []
     for role in user.roles:
-      roles.append(role.name.mention)
+      roles.append(role.mention)
       
     embed = discord.Embed(
       title = f"About You: {ctx.author.status}",
