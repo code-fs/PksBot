@@ -13,7 +13,7 @@ async def on_ready():
   
 @bot.event
 async def on_member_join(member):
-  channel = client.get_channel(901099381665718303)
+  channel = bot.get_channel(901099381665718303)
   embed = discord.Embed(
     title = "Welcome to the server",
     description = f"How are you doing? Before hoping into the fun, make sure to read the rules in <#962096867783626812> and join the team by opening a ticket in <#962096867783626812> then follow along.",
@@ -127,5 +127,32 @@ async def tc(ctx):
   )
   
   await ctx.send(embed=embed)
+
+@client.command()
+async def stc(ctx, *, suggestion):
+  channel = client.get_channel(955093721093910578)
+  embed = discord.Embed(
+    title = "Tactic Suggestion Submitted!",
+    description = "Your suggestion will be sent staff and they will respond to you ASAP.",
+    color = 0x47ff69
+  )
+  submission = discord.Embed(
+    title = "New Tactic Suggestion!",
+    description = f"By **{ctx.author.display_name}**",
+    color = 0xFF6500
+  )
+  submission.add_field(
+    name = "Suggestion",
+    value = suggestion.capitalize(),
+    inline = False
+  )
+  submission.add_field(
+    name = "User ID",
+    value = ctx.author.id,
+    inline = False
+  )
+  
+  await channel.send(embed=submition)
+  await ctx.reply(embed=embed)
   
 bot.run(os.environ['DISCORD_TOKEN'])
