@@ -47,6 +47,10 @@ async def info(ctx):
 @bot.command()
 async def abtusr(ctx, user:discord.Member=None):
   if user:
+    roles = []
+    for role in user.roles:
+      roles.append(role.name)
+      
     embed = discord.Embed(
       title = f"About {user}: {user.status}",
       color = 0xFF6500
@@ -69,7 +73,7 @@ async def abtusr(ctx, user:discord.Member=None):
     )
     embed.add_field(
       name = "**__Roles__**",
-      value = user.roles
+      value = ', '.join(roles)
     )
     embed.add_field(
       name = "**__Is Bot?__**",
@@ -77,6 +81,10 @@ async def abtusr(ctx, user:discord.Member=None):
     )
     embed.set_thumbnail(url = user.display_avatar)
   else:
+    roles = []
+    for role in user.roles:
+      roles.append(role.name)
+      
     embed = discord.Embed(
       title = f"About You: {ctx.author.status}",
       color = 0xFF6500
@@ -99,7 +107,7 @@ async def abtusr(ctx, user:discord.Member=None):
     )
     embed.add_field(
       name = "**__Roles__**",
-      value = ctx.author.roles
+      value = ', '.join(roles)
     )
     embed.add_field(
       name = "**__Is Bot?__**",
