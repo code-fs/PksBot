@@ -144,6 +144,7 @@ async def st(ctx, *, suggestion):
   )
   submission = discord.Embed(
     title = "New Tactic Suggestion!",
+    url = ctx.author.jump_url,
     description = f"By **{ctx.author.display_name}**",
     color = 0xFF6500
   )
@@ -161,7 +162,6 @@ async def st(ctx, *, suggestion):
   
   await channel.send(embed=submission)
   await ctx.reply(embed=embed)
-
 
 @bot.command()
 async def accept(ctx, user_id):
