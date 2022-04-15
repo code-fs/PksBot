@@ -68,6 +68,7 @@ async def server(ctx):
     name = "Server's Owner ID",
     value = ctx.guild.owner_id
   )
+  embed.set_tumbnail(url = ctx.guild.icon)
   
   await ctx.send(embed=embed)
   
