@@ -43,7 +43,7 @@ async def help(ctx):
   )
   embed.add_field(
     name = "**__Utility__**",
-    value = "`st`",
+    value = "`st`, `abtusr`, `tc`, `server`",
     inline = False
   )
   embed.set_footer(text="<> - Required | [] - Optional")
