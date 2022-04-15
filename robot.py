@@ -51,6 +51,27 @@ async def help(ctx):
   await ctx.send(embed=embed)
   
 @bot.command()
+async def server(ctx):
+  embed = discord.Embed(
+    title = f"About {ctx.guild.name}",
+    color = 0xFF6500
+  )
+  embed.add_field(
+    name = "Server Created At",
+    value = ctx.guild.created_at
+  )
+  embed.add_field(
+    name = "Server Owner",
+    value = ctx.guild.owner
+  )
+  embed.add_field(
+    name = "Server's Owner ID",
+    value = ctx.guild.owner_id
+  )
+  
+  await ctx.send(embed=embed)
+  
+@bot.command()
 async def abtusr(ctx, user:discord.Member=None):
   if user:
     roles = []
