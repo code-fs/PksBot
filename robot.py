@@ -37,11 +37,6 @@ async def help(ctx):
     inline = False
   )
   embed.add_field(
-    name = "**__Information__**",
-    value = "`abtusr`",
-    inline = False
-  )
-  embed.add_field(
     name = "**__Utility__**",
     value = "`st`, `abtusr`, `tc`, `server`",
     inline = False
