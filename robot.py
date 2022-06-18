@@ -6,7 +6,7 @@ intents = discord.Intents.default()
 intents.members = True
 intents.presences = True
 
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('p!'), intents=intents)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('!pks '), intents=intents)
 bot.remove_command('help')
 
 @bot.event
@@ -45,6 +45,12 @@ async def help(ctx):
   embed.set_footer(text="<> - Required | [] - Optional")
   
   await ctx.send(embed=embed)
+  
+import random
+@bot.command()
+async def claim(ctx):
+  money = random.randint(1, 99)
+  await ctx.send(f"You just won **{money}**!")
   
 @bot.command()
 async def server(ctx):
