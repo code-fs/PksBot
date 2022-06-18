@@ -5,7 +5,7 @@ import os
 intents = discord.Intents.default()
 intents.members = True
 
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('p!'),intents=intents)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('pks '),intents=intents)
 bot.help_command = None
 
 @bot.event
