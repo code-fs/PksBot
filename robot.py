@@ -6,7 +6,7 @@ intents = discord.Intents.default()
 intents.members = True
 intents.presences = True
 
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('r:'), intents=intents)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('p!'), intents=intents)
 bot.remove_command('help')
 
 @bot.event
